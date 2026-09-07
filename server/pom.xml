@@ -50,7 +50,7 @@
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-jsqlparser</artifactId>
-			<version>3.5.9</version>
+			<version>3.5.17</version>
 		</dependency>
 
 		<!-- 密码哈希（BCrypt），替代明文存储 -->
