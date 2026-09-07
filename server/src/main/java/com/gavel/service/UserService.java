@@ -1,0 +1,25 @@
+
+package com.gavel.service;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.gavel.entity.UserEntity;
+import com.gavel.utils.PageUtils;
+
+
+/**
+ * 系统用户
+ */
+public interface UserService extends IService<UserEntity> {
+ 	PageUtils queryPage(Map<String, Object> params);
+    
+   	List<UserEntity> selectListView(Wrapper<UserEntity> wrapper);
+   	
+   	PageUtils queryPage(Map<String, Object> params,Wrapper<UserEntity> wrapper);
+	   	
+}

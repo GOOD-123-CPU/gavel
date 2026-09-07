@@ -1,0 +1,32 @@
+# ---- Personal documents (never commit) ----
+论文.docx
+ppt.pptx
+*.docx
+*.pptx
+
+# ---- Build artifacts ----
+server/target/
+target/
+*.jar
+!server/target/*.jar.orig
+
+# ---- Runtime ----
+upload/
+logs/
+*.log
+
+# ---- IDE ----
+.idea/
+.vscode/
+*.iml
+.classpath
+.project
+.settings/
+.factorypath
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Env ----
+.env

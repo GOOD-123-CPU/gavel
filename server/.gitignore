@@ -1,0 +1,41 @@
+HELP.md
+target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/
+
+### 运行期产物 ###
+upload/
+logs/
+*.log
+
+### OS ###
+.DS_Store
+Thumbs.db
+
+### 个人文档（论文/PPT 含个人信息，不入库，发布时按需手动放入私有仓库）
+*.docx
+*.pptx

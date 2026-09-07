@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e293b"/>
+      <stop offset="1" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <!-- rounded square background -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="url(#bg)"/>
+  <!-- sound block -->
+  <rect x="96" y="352" width="320" height="64" rx="16" fill="url(#wood)"/>
+  <rect x="128" y="328" width="256" height="24" rx="10" fill="#f59e0b"/>
+  <!-- gavel head (angled) -->
+  <g transform="rotate(-45 256 216)">
+    <rect x="176" y="160" width="160" height="96" rx="24" fill="url(#wood)"/>
+    <rect x="176" y="160" width="160" height="28" rx="14" fill="#fcd34d" opacity="0.65"/>
+  </g>
+  <!-- handle -->
+  <g transform="rotate(-45 256 216)">
+    <rect x="248" y="256" width="16" height="128" rx="8" fill="#b45309"/>
+  </g>
+  <!-- strike spark -->
+  <g stroke="#fcd34d" stroke-width="14" stroke-linecap="round">
+    <line x1="176" y1="120" x2="152" y2="96"/>
+    <line x1="256" y1="104" x2="256" y2="72"/>
+    <line x1="336" y1="120" x2="360" y2="96"/>
+  </g>
+</svg>

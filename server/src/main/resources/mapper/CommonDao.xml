@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gavel.dao.CommonDao">
+
+	<!-- 安全说明：表名/列名已在上层 Controller 白名单校验（仅允许登记过的标识符），此处 ${} 拼接是安全的 -->
+	<select id="getOption" resultType="String" >
+		SELECT distinct ${column} FROM ${table}
+			where ${column} is not null and ${column} !=''
+	</select>
+
+	<select id="getFollowByOption" resultType="map" >
+		SELECT * FROM ${table} where ${column}=#{columnValue}
+	</select>
+
+</mapper>

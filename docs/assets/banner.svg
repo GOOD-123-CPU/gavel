@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="0.55" stop-color="#1e293b"/>
+      <stop offset="1" stop-color="#312e81"/>
+    </linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <rect width="1200" height="300" fill="url(#grid)"/>
+
+  <!-- decorative gavel on the right -->
+  <g transform="translate(950 40) scale(0.85)">
+    <rect x="40" y="196" width="220" height="44" rx="12" fill="url(#wood)"/>
+    <rect x="64" y="178" width="172" height="18" rx="9" fill="#f59e0b"/>
+    <g transform="rotate(-45 150 110)">
+      <rect x="78" y="64" width="144" height="88" rx="22" fill="url(#wood)"/>
+      <rect x="78" y="64" width="144" height="26" rx="13" fill="#fcd34d" opacity="0.6"/>
+    </g>
+    <g transform="rotate(-45 150 110)">
+      <rect x="142" y="152" width="16" height="120" rx="8" fill="#b45309"/>
+    </g>
+    <g stroke="#fcd34d" stroke-width="10" stroke-linecap="round">
+      <line x1="80" y1="34" x2="62" y2="16"/>
+      <line x1="150" y1="22" x2="150" y2="-4"/>
+      <line x1="220" y1="34" x2="238" y2="16"/>
+    </g>
+  </g>
+
+  <!-- wordmark -->
+  <text x="72" y="128" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="88" font-weight="800" fill="#ffffff" letter-spacing="2">Gavel</text>
+  <text x="76" y="176" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="28" font-weight="500" fill="#fbbf24">Open-source Online Auction Platform</text>
+
+  <!-- tech chips -->
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="18" font-weight="600">
+    <rect x="76" y="212" width="150" height="38" rx="19" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.25"/>
+    <text x="151" y="237" fill="#e2e8f0" text-anchor="middle">Spring Boot 3</text>
+    <rect x="238" y="212" width="104" height="38" rx="19" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.25"/>
+    <text x="290" y="237" fill="#e2e8f0" text-anchor="middle">Java 17</text>
+    <rect x="354" y="212" width="150" height="38" rx="19" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.25"/>
+    <text x="429" y="237" fill="#e2e8f0" text-anchor="middle">Vue 2 + Layui</text>
+    <rect x="516" y="212" width="110" height="38" rx="19" fill="#ffffff" fill-opacity="0.10" stroke="#ffffff" stroke-opacity="0.25"/>
+    <text x="571" y="237" fill="#e2e8f0" text-anchor="middle">Docker</text>
+  </g>
+</svg>

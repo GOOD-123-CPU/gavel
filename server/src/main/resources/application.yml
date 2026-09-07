@@ -1,0 +1,72 @@
+# ============================================================
+# Gavel — Open-source Online Auction Platform
+# ============================================================
+server:
+    tomcat:
+        uri-encoding: UTF-8
+    port: 8080
+
+spring:
+    application:
+        name: gavel
+    datasource:
+        driverClassName: com.mysql.cj.jdbc.Driver
+        # Override in production: SPRING_DATASOURCE_URL / SPRING_DATASOURCE_USERNAME / SPRING_DATASOURCE_PASSWORD
+        url: jdbc:mysql://127.0.0.1:3306/gavel?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+        username: root
+        password: 123456
+    servlet:
+      multipart:
+        max-file-size: 10MB
+        max-request-size: 10MB
+    web:
+      resources:
+        static-locations: classpath:/static/,classpath:/admin/,classpath:/front/,file:upload/
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+
+# MyBatis-Plus 3.x
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  typeAliasesPackage: com.gavel.entity
+  global-config:
+    banner: false
+    db-config:
+      id-type: input
+      logic-delete-value: -1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    call-setters-on-nulls: true
+    jdbc-type-for-null: 'null'
+
+# 应用自定义配置
+app:
+  # CORS 白名单：生产环境务必改为真实域名，多个用英文逗号分隔
+  cors:
+    allowed-origins: http://localhost:8080
+
+# OpenAPI 3 交互式文档
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+
+# 运行可观测性
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized
+
+logging:
+  level:
+    root: info
