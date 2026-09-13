@@ -1,26 +1,35 @@
 # GitHub Linguist 语言统计修正
-# gavel = Spring Boot（Java）后端 + Vue 管理端
-# 问题：已构建的前端产物被提交进仓库，导致语言统计被 JavaScript 淹没
-#   （java 约 214 KB vs js 约 10.3 MB，chunk-vendors.js 单文件即有数 MB）
-# 修正：将构建产物与第三方前端资源排除出语言统计
+# gavel = Spring Boot（Java）后端 + Vue 管理端 / 前端
+#
+# 诊断结果（.gitattributes 提交前）：
+#   js 10,322,299 (80.4%) | css 1,318,293 (10.3%) | vue 519,974 (4.1%)
+#   html 456,594 (3.6%) | java 213,854 (1.7%)   <- Java 后端被压到 1.7%
+#
+# 根因：仓库内提交了【已构建的前端产物】与【第三方库完整副本】，
+#   单文件最大 2.07 MB（admin/dist/js/chunk-vendors.js）。
+# 修正：以下路径均非本项目源码，排除出语言统计。
 
-# --- 前端构建产物（bundled/minified）---
-server/src/main/resources/admin/admin/dist/** linguist-generated
-server/src/main/resources/static/** linguist-generated
-**/dist/** linguist-generated
-**/*.min.js linguist-generated
-**/*.min.css linguist-generated
+# --- 已构建的前端产物（bundled / minified）---
+server/src/main/resources/admin/admin/dist/**   linguist-generated
+server/src/main/resources/front/front/css/**    linguist-generated
+server/src/main/resources/front/front/js/**     linguist-generated
 
-# --- 前端依赖与源码（属于管理端，不计入后端语言占比）---
-server/src/main/resources/admin/admin/node_modules/** linguist-vendored
-server/src/main/resources/admin/admin/src/** linguist-vendored
-server/src/main/resources/admin/admin/public/** linguist-vendored
-**/node_modules/** linguist-vendored
+# --- 第三方库完整副本（tinymce / elementui / vue 运行时等）---
+server/src/main/resources/front/front/modules/**  linguist-vendored
+server/src/main/resources/front/front/elementui/** linguist-vendored
+server/src/main/resources/front/front/modules/tinymce/** linguist-vendored
+
+# --- 前端依赖与构建配置 ---
+**/node_modules/**        linguist-vendored
+**/dist/**                linguist-generated
+**/build/**               linguist-generated
+**/*.min.js               linguist-generated
+**/*.min.css              linguist-generated
 
 # --- 锁文件 ---
-**/package-lock.json linguist-generated
-**/yarn.lock linguist-generated
+**/package-lock.json      linguist-generated
+**/yarn.lock              linguist-generated
 
 # --- 文档 ---
-docs/** linguist-documentation
-*.md linguist-documentation
+docs/**                   linguist-documentation
+*.md                      linguist-documentation
