@@ -30,3 +30,20 @@ Thumbs.db
 
 # ---- Env ----
 .env
+
+# ---- 已构建前端产物中的 source map（纯调试信息，运行时不需要）----
+# admin/dist 的 .js/.css 需随仓库分发（Spring Boot 直接托管），
+# 但 .js.map / .css.map 体积巨大（单文件可达 9 MB）且无运行时用途。
+*.js.map
+*.css.map
+
+# ---- 前端依赖（admin 前端源码随仓库分发，依赖不入库）----
+server/src/main/resources/admin/admin/node_modules/
+server/src/main/resources/admin/admin/dist/**/*.map
+server/src/main/resources/front/front/modules/**/node_modules/
+
+# ---- 构建中间产物 ----
+server/src/main/resources/admin/admin/.cache/
+server/src/main/resources/admin/admin/.eslintcache
+npm-debug.log*
+yarn-error.log*
