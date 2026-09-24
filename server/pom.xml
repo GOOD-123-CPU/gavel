@@ -44,13 +44,13 @@
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-spring-boot3-starter</artifactId>
-			<version>3.5.9</version>
+			<version>3.5.17</version>
 		</dependency>
 		<!-- MP 3.5.9+ 分页插件所需的 jsqlparser 适配 -->
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-jsqlparser</artifactId>
-			<version>3.5.9</version>
+			<version>3.5.17</version>
 		</dependency>
 
 		<!-- 密码哈希（BCrypt），替代明文存储 -->
@@ -67,7 +67,7 @@
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.16.1</version>
+			<version>2.22.0</version>
 		</dependency>
 
 		<!-- OpenAPI 3 交互式文档（Swagger UI） -->
